@@ -1,8 +1,8 @@
 import "./styles.css";
 import { ToDoItem } from "./todo";
-import { Display } from "./DOM";
+import { DOM } from "./DOM";
 
 
-const defaultToDoItem = new ToDoItem('First Project', "Write something here", "due date", "high");
+const defaultToDoItem = new ToDoItem('Take out the trash', "Write something here", "due date", "high");
 
-console.log(defaultToDoItem.info)
+DOM.displayTask(defaultToDoItem);
