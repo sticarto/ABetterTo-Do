@@ -18,6 +18,8 @@ const DOM = (function () {
         mainpage.appendChild(item);
     }
     
+    // something to display a new project on the side bar
+    // something to display the project title inside the main page
 
     return {displayTask}
 
