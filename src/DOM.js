@@ -18,10 +18,20 @@ const DOM = (function () {
         mainpage.appendChild(item);
     }
     
-    // something to display a new project on the side bar
+    
+    const addProjectToSidebar = (project) => {
+        const projectTitle = document.createElement('button');
+
+        projectTitle.textContent = project.title;
+
+        sidebar.appendChild(projectTitle);
+
+    }
+
     // something to display the project title inside the main page
 
-    return {displayTask}
+
+    return {displayTask, addProjectToSidebar}
 
 })();
 

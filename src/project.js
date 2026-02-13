@@ -24,6 +24,10 @@ class Project {
     get lists() {
         return this.#toDoLists;
     }
+
+    get title() {
+        return this.#title;
+    }
     
 }
 

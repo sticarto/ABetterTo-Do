@@ -4,6 +4,10 @@ body {
     margin: 0;
 }
 
+h1 {
+    text-align: center;
+}
+
 .container {
     height: 100vh;
     display: grid;
@@ -12,6 +16,17 @@ body {
 }
 
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    
     background-color: lightgrey;
 
 }
+
+
+/* For Later
+
+.sidebar > button {
+    background-color: transparent;
+    border: none;
+} */
