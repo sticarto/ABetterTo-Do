@@ -6,7 +6,7 @@ const DOM = (function () {
     const sidebar = document.querySelector(".sidebar");
     const mainpage = document.querySelector(".main-page");
 
-    // Display to-do object's information
+
     const displayToDo = (task) => {
         if (!(task instanceof ToDoItem)) {
             console.error("Error: the parameter must be an instance of the ToDoItem class");
@@ -30,7 +30,7 @@ const DOM = (function () {
 
     }
 
-    // something to display the project title inside the main page
+
     const displayProject = (project) => {
 
         while (mainpage.firstChild) {
@@ -38,14 +38,18 @@ const DOM = (function () {
         }
         
         const projectTitle = document.createElement('h1');
+        const projectDescription = document.createElement('p');
+
+        projectDescription.textContent = project.description;
         projectTitle.textContent = project.title;
+
         mainpage.appendChild(projectTitle);
+        mainpage.appendChild(projectDescription);
 
         // iterate through the to do lists the project has stored and display them in order
         project.lists.forEach(todo => {
             displayToDo(todo);
         });
-
 
     }
 

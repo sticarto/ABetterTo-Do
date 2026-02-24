@@ -3,10 +3,12 @@ import { ToDoItem } from "./todo";
 // This stores to-do lists
 class Project {
     #title;
+    #description;
     #toDoLists = [];
 
-    constructor(title) {
+    constructor(title, description='') {
         this.#title = title;
+        this.#description = description;
     }
 
     addToDoList(toDoList) {
@@ -27,6 +29,10 @@ class Project {
 
     get title() {
         return this.#title;
+    }
+
+    get description() {
+        return this.#description
     }
     
 }

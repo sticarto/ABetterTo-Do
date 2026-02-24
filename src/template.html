@@ -9,11 +9,31 @@
     <div class="container">
         <div class="sidebar">
             <h1>Projects</h1>
+            <button id="create-project-button">Add Project</button>
+
         </div>
         <div class="main-page">
             <h1>To-Do</h1>
         </div>
 
+        <dialog id="dialog-add-project">
+            <p>Enter Project Details</p>
+            <form action="">
+                <p>
+                    <label>
+                        Title:
+                        <input type="text" id="title" name="title" required />
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Description:
+                        <textarea id="description" name="description" rows="2"></textarea>
+                    </label>
+                </p>
+            </form>
+            <button id="button-confirm" formethod="dialog">Confirm</button>
+        </dialog>
     </div>
 </body>
 </html>
