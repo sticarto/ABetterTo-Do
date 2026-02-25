@@ -1,5 +1,6 @@
 // Handles the UI
 
+import { Project } from "./project";
 import { ToDoItem } from "./todo";
 
 const DOM = (function () {
@@ -53,8 +54,35 @@ const DOM = (function () {
 
     }
 
+    const projectModal = () => {
+        const dialog = document.querySelector('#dialog-add-project');
+        const btnConfirm = dialog.querySelector('#button-confirm');
 
-    return {displayProject, addProjectToSidebar}
+        dialog.addEventListener('close', (e) => {
+            document.querySelector('#dialog-add-project > form').reset();
+        })
+
+        btnConfirm.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const project_title = dialog.querySelector('#title').value;
+            const project_description = dialog.querySelector('#description').value;
+
+            // only the project title is required
+            // Should this be moved elsewhere? It might not be the DOM's responsibility
+            if (project_title) {
+                const newProject = new Project(project_title, project_description);
+
+                addProjectToSidebar(newProject);
+            }
+
+            dialog.close();
+        })
+
+        dialog.showModal();
+    }
+
+    return {displayProject, addProjectToSidebar, projectModal}
 
 })();
 

@@ -9,7 +9,10 @@
     <div class="container">
         <div class="sidebar">
             <h1>Projects</h1>
-            <button id="create-project-button">Add Project</button>
+            <div class="action-buttons">
+                <button id="create-project-button">Add Project</button>
+                <button id="create-todo-button">Add To Do</button>
+            </div>
 
         </div>
         <div class="main-page">
@@ -33,6 +36,18 @@
                 </p>
             </form>
             <button id="button-confirm" formethod="dialog">Confirm</button>
+        </dialog>
+
+        <dialog id="dialog-add-todo">
+            <p>Enter To Do Details</p>
+            <form action="">
+                <p>
+                    <label>
+                        To-Do:
+                        <input type="text" id="todo" name="todo" required>
+                    </label>
+                </p>
+            </form>
         </dialog>
     </div>
 </body>
