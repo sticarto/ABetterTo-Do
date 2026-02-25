@@ -34,7 +34,7 @@ btnConfirm.addEventListener('click', (event) => {
 const defaultToDoItem = new ToDoItem('Take out the trash', "Write something here", "due date", "high");
 const secondToDoItem = new ToDoItem('Walk the dog', "Write something here", "due date", "medium");
 const defaultProject = new Project('First Project', 'Add a to-do item to get started!');
-const secondProject = new Project('Second Project');
+
 
 defaultProject.addToDoList(defaultToDoItem);
 defaultProject.addToDoList(secondToDoItem);
@@ -42,4 +42,3 @@ console.log(defaultProject.lists)
 
 DOM.displayProject(defaultProject);
 DOM.addProjectToSidebar(defaultProject);
-DOM.addProjectToSidebar(secondProject);

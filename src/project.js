@@ -20,7 +20,9 @@ class Project {
         this.#toDoLists.push(toDoList);
     }
 
-    // remove to do lists
+    removeToDoList(toDoListIndex) {
+        this.#toDoLists.splice(toDoListIndex, 1); // for now
+    }
 
 
     get lists() {
