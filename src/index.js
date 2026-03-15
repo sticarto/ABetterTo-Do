@@ -3,12 +3,13 @@ import { ToDoItem } from "./todo";
 import { DOM } from "./DOM";
 import { Project } from "./project";
 
-const addProjectButton = document.querySelector('#create-project-button');
+
+// const addToDoButton = document.querySelector('#create-todo-button');
 
 
-addProjectButton.addEventListener('click', DOM.projectModal);
+// addToDoButton.addEventListener('click', DOM.toDoModal);
 
-
+DOM.projectModal();
 
 
 // Examples stuff ----------------

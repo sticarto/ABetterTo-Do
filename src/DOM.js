@@ -55,8 +55,12 @@ const DOM = (function () {
     }
 
     const projectModal = () => {
+        const addProjectButton = document.querySelector('#create-project-button');
+
         const dialog = document.querySelector('#dialog-add-project');
         const btnConfirm = dialog.querySelector('#button-confirm');
+
+        addProjectButton.addEventListener('click', () => dialog.showModal());
 
         dialog.addEventListener('close', (e) => {
             document.querySelector('#dialog-add-project > form').reset();
@@ -79,7 +83,6 @@ const DOM = (function () {
             dialog.close();
         })
 
-        dialog.showModal();
     }
 
     return {displayProject, addProjectToSidebar, projectModal}
