@@ -55,3 +55,14 @@ textarea {
 .main-page > p {
     text-align: center;
 }
+
+.task {
+    padding: 10px;
+    background-color: rgb(225, 225, 225);
+    margin: 8px 40px;
+    border-radius: 0.5rem;
+}
+
+.hide {
+    display: none;
+}

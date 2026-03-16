@@ -13,7 +13,11 @@ class ToDoItem {
     }
 
     get info() {
-        return `Title: ${this.#title}, Description: ${this.#description}, Due Date: ${this.#dueDate}, Priority: ${this.#priority}`;
+        return `${this.#title}, Due Date: ${this.#dueDate}, Priority: ${this.#priority}`;
+    }
+
+    get description () {
+        return this.#description;
     }
     
 

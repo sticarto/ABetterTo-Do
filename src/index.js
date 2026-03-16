@@ -10,7 +10,7 @@ DOM.toDoModal();
 
 // Examples stuff ----------------
 const defaultToDoItem = new ToDoItem('Take out the trash', "Write something here", "due date", "high");
-const secondToDoItem = new ToDoItem('Walk the dog', "Write something here", "due date", "medium");
+const secondToDoItem = new ToDoItem('Walk the dog', "Don't Write something here", "due date", "medium");
 const defaultProject = new Project('Default Project', 'Add a to-do item to get started!');
 
 

@@ -15,8 +15,20 @@ const DOM = (function () {
             return;
         }
 
-        const item = document.createElement('p');
+        const item = document.createElement('div');
+        item.classList.add("task");
         item.textContent = task.info;
+
+        const hiddenInfo = document.createElement('div');
+        hiddenInfo.classList.add("hide");
+        hiddenInfo.style.padding = "10px";
+        hiddenInfo.textContent = task.description;
+
+        item.addEventListener('click', () => {
+            hiddenInfo.classList.toggle("hide");
+        })
+
+        item.appendChild(hiddenInfo);
         mainpage.appendChild(item);
     }
     
