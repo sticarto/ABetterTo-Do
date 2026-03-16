@@ -6,6 +6,7 @@ import { ToDoItem } from "./todo";
 const DOM = (function () {
     const sidebar = document.querySelector(".sidebar");
     const mainpage = document.querySelector(".main-page");
+    let currentProject; // just to let the DOM know the active project
 
 
     const displayToDo = (task) => {
@@ -52,13 +53,15 @@ const DOM = (function () {
             displayToDo(todo);
         });
 
+        currentProject = project; // this allows access for adding to-dos to current page
+
     }
+
 
     const projectModal = () => {
         const addProjectButton = document.querySelector('#create-project-button');
-
         const dialog = document.querySelector('#dialog-add-project');
-        const btnConfirm = dialog.querySelector('#button-confirm');
+        const btnConfirm = dialog.querySelector('#button-confirm-project');
 
         addProjectButton.addEventListener('click', () => dialog.showModal());
 
@@ -85,7 +88,39 @@ const DOM = (function () {
 
     }
 
-    return {displayProject, addProjectToSidebar, projectModal}
+
+    const toDoModal = () => {
+        const addToDoButton = document.querySelector('#create-todo-button');
+        const dialog = document.querySelector('#dialog-add-todo');
+        const btnConfirm = document.querySelector('#button-confirm-todo')
+
+        addToDoButton.addEventListener('click', () => dialog.showModal());
+
+        dialog.addEventListener('close', (e) => {
+            document.querySelector('#dialog-add-todo > form').reset();
+        })
+
+        btnConfirm.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const todo_title = dialog.querySelector('#todo').value;
+            const todo_description = dialog.querySelector('#todo-desc').value;
+            const todo_dueDate = dialog.querySelector('#due-date').value;
+            const todo_priority = dialog.querySelector('#priority').value;
+            
+            
+            if (todo_title) {
+                const newToDo = new ToDoItem(todo_title, todo_description, todo_dueDate, todo_priority);
+
+                currentProject.addToDoList(newToDo);
+                displayProject(currentProject);
+            }
+
+            dialog.close();
+        })
+    }
+
+    return {displayProject, addProjectToSidebar, projectModal, toDoModal}
 
 })();
 
