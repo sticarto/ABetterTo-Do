@@ -20,8 +20,13 @@ class Project {
         this.#toDoLists.push(toDoList);
     }
 
-    removeToDoList(toDoListIndex) {
-        this.#toDoLists.splice(toDoListIndex, 1); // for now
+    removeToDoList(toDoList) {
+        // For some reason, when I put an ID on the TODO object, it stops it from displaying
+        // so I resorted to using the title instead... 
+        const toDoListIndex = this.#toDoLists.findIndex(task => task.title === toDoList.title);
+        if (toDoListIndex !== -1) {
+            this.#toDoLists.splice(toDoListIndex, 1);
+        }
     }
 
 

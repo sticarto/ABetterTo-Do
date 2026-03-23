@@ -24,10 +24,20 @@ const DOM = (function () {
         hiddenInfo.style.padding = "10px";
         hiddenInfo.textContent = task.description;
 
+        const removeButton = document.createElement('button');
+        removeButton.classList.add("remove-todo-button");
+        removeButton.textContent = "X";
+
+        removeButton.addEventListener('click', () => {
+            currentProject.removeToDoList(task);
+            displayProject(currentProject);
+        })
+
         item.addEventListener('click', () => {
             hiddenInfo.classList.toggle("hide");
         })
-
+        
+        item.appendChild(removeButton);
         item.appendChild(hiddenInfo);
         mainpage.appendChild(item);
     }

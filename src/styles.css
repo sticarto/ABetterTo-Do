@@ -48,8 +48,18 @@ h1 {
     border-radius: 4px;
 }
 
+.remove-todo-button {
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+}
+
 textarea {
     resize: none;
+}
+
+.main-page {
+    margin: 0 100px;
 }
 
 .main-page > p {

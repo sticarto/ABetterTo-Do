@@ -10,6 +10,7 @@ class ToDoItem {
         this.#description = description;
         this.#dueDate = dueDate;
         this.#priority = priority;
+        // this.id = crypto.randomUUID();
     }
 
     get info() {
@@ -20,6 +21,12 @@ class ToDoItem {
         return this.#description;
     }
     
+    // get id () {
+    //     return this.id;
+    // }
+    get title() {
+        return this.#title;
+    }
 
 }
 
