@@ -76,3 +76,8 @@ textarea {
 .hide {
     display: none;
 }
+
+.complete {
+    text-decoration: line-through;
+    color: grey;
+}

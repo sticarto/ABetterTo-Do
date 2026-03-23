@@ -17,7 +17,9 @@ const DOM = (function () {
 
         const item = document.createElement('div');
         item.classList.add("task");
-        item.textContent = task.info;
+
+        const taskInfo = document.createElement('span');
+        taskInfo.textContent = task.info;
 
         const hiddenInfo = document.createElement('div');
         hiddenInfo.classList.add("hide");
@@ -28,15 +30,23 @@ const DOM = (function () {
         removeButton.classList.add("remove-todo-button");
         removeButton.textContent = "X";
 
+        const checkbox = document.createElement('input');
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.addEventListener("change", () => {
+            item.classList.toggle('complete');
+        })
+
         removeButton.addEventListener('click', () => {
             currentProject.removeToDoList(task);
             displayProject(currentProject);
         })
 
-        item.addEventListener('click', () => {
+        taskInfo.addEventListener('click', () => {
             hiddenInfo.classList.toggle("hide");
         })
         
+        item.appendChild(checkbox);
+        item.appendChild(taskInfo);
         item.appendChild(removeButton);
         item.appendChild(hiddenInfo);
         mainpage.appendChild(item);

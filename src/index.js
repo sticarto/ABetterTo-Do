@@ -16,7 +16,7 @@ const defaultProject = new Project('Default Project', 'Add a to-do item to get s
 
 defaultProject.addToDoList(defaultToDoItem);
 defaultProject.addToDoList(secondToDoItem);
-console.log(defaultProject.lists)
+// console.log(defaultProject.lists)
 
 DOM.displayProject(defaultProject);
 DOM.addProjectToSidebar(defaultProject);
